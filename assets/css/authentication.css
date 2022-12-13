@@ -1,0 +1,144 @@
+@import url('global_css.css');
+
+
+.container {
+    display       : flex;
+    flex-direction: column;
+}
+
+.container>section {
+    height         : 100vh;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+    gap            : 1em;
+}
+
+.container>section h3 {
+    color         : var(--content-background);
+    text-shadow   : 1px 1px 5px black;
+    letter-spacing: 2px;
+}
+
+.container>section:nth-child(odd) {
+    background-color: var(--highlight);
+}
+
+.container>section:nth-child(even) {
+    background-color: var(--navigation-color);
+}
+
+
+.container>section>form {
+    width           : 40vw;
+    display         : flex;
+    flex-direction  : column;
+    gap             : 1em;
+    background-color: var(--content-background);
+    padding         : 1em;
+    border-radius   : 5px;
+    box-shadow      : 0 0 5px 1px #0005;
+}
+
+
+.container>section>form span {
+    display       : flex;
+    flex-direction: column;
+    gap           : .5em;
+}
+
+.container>section>form span p {
+    font-size  : 1em;
+    font-weight: bold;
+}
+
+.container>section:nth-child(odd)>form span p {
+    color: var(--highlight);
+}
+
+.container>section:nth-child(odd)>form span p a {
+    color: var(--navigation-color);
+}
+
+.container>section:nth-child(even)>form span p {
+    color: var(--navigation-color);
+}
+
+.container>section:nth-child(even)>form span p a {
+    color: var(--highlight);
+}
+
+
+.container>section:nth-child(odd)>form span label {
+    color: var(--highlight);
+}
+
+.container>section:nth-child(even)>form span label {
+    color: var(--navigation-color);
+}
+
+.container>section>form span input {
+    padding         : .5em;
+    font-weight     : bold;
+    /* border       : none; */
+    border-radius   : .5em;
+}
+
+
+.container>section:nth-child(odd)>form span input {
+    border: 2px solid var(--highlight);
+    color : var(--highlight);
+}
+
+.container>section:nth-child(even)>form span input {
+    border: 2px solid var(--navigation-color);
+    color : var(--navigation-color);
+}
+
+.container>section>form span button {
+    width        : fit-content;
+    padding      : .5em;
+    border       : none;
+    border-radius: .5em;
+    cursor       : pointer;
+    font-weight  : bold;
+}
+
+.container>section:nth-child(odd)>form span button {
+    background-color: var(--content-background);
+    box-shadow      : 0 0 3px 1px var(--navigation-color);
+    color           : var(--navigation-color);
+}
+
+.container>section:nth-child(odd)>form span button:hover {
+    background-color: var(--navigation-color);
+    color           : var(--content-background);
+}
+
+.container>section:nth-child(even)>form span button {
+    background-color: var(--content-background);
+    box-shadow      : 0 0 3px 1px var(--highlight);
+    color           : var(--highlight);
+}
+
+.container>section:nth-child(even)>form span button:hover {
+    background-color: var(--highlight);
+    color           : var(--content-background);
+}
+
+
+@media (min-width:300px) and (max-width:768px) {
+
+    .container>section {
+        height        : 100vh;
+        padding-top   : .5em;
+        padding-bottom: .5em;
+    }
+
+    .container>section>form {
+        width    : 70vw;
+        height   : fit-content;
+        font-size: .8em;
+    }
+}

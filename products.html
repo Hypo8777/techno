@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="lib/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="assets/css/products.css">
+    <script src="assets/js/products.js" defer></script>
+    <title>Online Market Goods / Products</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="home_div">
+                <a href="index.html">Online Market Goods</a>
+            </div>
+            <div class="action_div">
+                <a style="cursor: pointer;" id="open_cart">Cart</a>
+
+                <a href="authentication.html#signin" id="btnin">Signin</a>
+                <a href="authentication.html#signup" id="btnout">Signup</a>
+
+                <!-- <a href="myaccount.html" id="myaccount"> My Account</a> -->
+                <a href="#" id="logout">Logout</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <div id="cart_modal">
+        <h1>Cart</h1>
+        <span>
+            <label for="">Total items bought</label>
+            <input type="number" name="" id="totalitems" readonly placeholder="Cart items added">
+        </span>
+        <br>
+        <span>
+            <details id="append_here" open>
+                <summary>List of Items</summary>
+            </details>
+        </span>
+        <br>
+        <span>
+            <label for="">Total price</label>
+            <input type="number" name="" id="totalprice" readonly placeholder="Cart items total price">
+        </span>
+        <br>
+
+        <span>
+            <label for="">Delivery Option</label>
+            <select name="" id="delivery_type">
+                <option value="Fast Delivery">Fast Delivery</option>
+                <option value="Sorted Delivery">Sorted Delivery</option>
+            </select>
+        </span>
+        <br>
+        <span>
+            <button id="buy_items">Buy</button>
+            <button id="close_modal">Close</button>
+        </span>
+    </div>
+
+    <div class="container" id="container">
+        <section class="category_browser_nav">
+            <div class="category_browser_nav_title">
+                <h3>Browse by category</h3>
+            </div>
+            <div class="category_browser_nav_actions">
+                <button class="category_nav_action_button" id="showMeats">Meats</button>
+                <button class="category_nav_action_button" id="showSeafoods">Seafoods</button>
+                <button class="category_nav_action_button" id="showSpices">Spices</button>
+                <button class="category_nav_action_button" id="showVegetables">Vegetables</button>
+            </div>
+        </section>
+        <section class="category_products">
+
+            <div class="meats" id="meats">
+                <h3>Meat Products</h3>
+                <div class="products" id="meat_products">
+                    <div class="card">
+                        <h4 id="product_name">Beef</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Beef" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Beef" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Chicken</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Chicken" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Chicken" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Pork</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Pork" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Pork" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="seafoods" id="seafoods">
+                <h3>Seafood Products</h3>
+                <div class="products">
+                    <div class="card">
+                        <h4 id="product_name">Fish</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Fish" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Fish" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Crabs</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Crab" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Crab" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Shrimp</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Shrimp" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="spices" id="spices">
+                <h3>Spices</h3>
+                <div class="products">
+                    <div class="card">
+                        <h4 id="product_name">Onion</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Onion" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Onion" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Garlic</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Garlic" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Garlic" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Chili</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Chili" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Chili" value="4" onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Red / Green Bell Pepper</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Red / Green Bell Pepper" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Red / Green Bell Pepper" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- <hr> -->
+            <div class="vegetables" id="vegetables">
+                <h3>Vegetables</h3>
+                <div class="products">
+                    <div class="card">
+                        <h4 id="product_name">Carrot</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Carrot" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Carrot" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Lettuce</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Lettuce" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Lettuce" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Cabbage</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Cabbage" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Cabbage" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Cauliflower</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Cauliflower" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Cauliflower" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                    <div class="card">
+                        <h4 id="product_name">Eggplant</h4>
+                        <p id="product_price">Price $4</p>
+                        <p id="">Seller / Store : Location Name</p>
+                        <span>
+                            <button id="buyproduct" name="Eggplant" value="4"
+                                onclick="buyproduct(this.name,this.value)">Buy</button>
+                            <button id="addcartitem" name="Eggplant" value="4"
+                                onclick="addcart(this.name,this.value);">Add
+                                to Cart</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

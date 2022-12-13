@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="lib/jquery-3.6.0.min.js"></script>
+    <script src="lib/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="assets/css/authentication.css">
+    <script src="assets/js/auth.js" defer></script>
+    <title>Authentication</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="user_signin" id="user_signin">
+            <h3>Sign In</h3>
+            <form method="POST" id="submitLogin" class="user_signin_inputs">
+                <span>
+                    <p>Dont have an account ? <a href="#user_signup">Create account</a></p>
+                </span>
+                <span class="input">
+                    <label for="in_username">Username / Email / Phone #</label>
+                    <input type="text" name="" id="in_username" required>
+                </span>
+                <span class="input">
+                    <label for="in_password">Password</label>
+                    <input type="password" name="" id="in_password" required>
+                </span>
+                <span>
+                    <button type="submit" id="in_btn">Sign In</button>
+                </span>
+            </form>
+        </section>
+        <section class="user_signup" id="user_signup">
+            <h3>Sign Up</h3>
+            <form method="POST" id="submitCreate" class="user_signin_inputs">
+                <span>
+                    <p>Already have an account ? <a href="#user_signin">Sign In</a></p>
+                </span>
+                <span class="input">
+                    <label for="up_username">Create Username</label>
+                    <input type="text" name="" id="up_username" required>
+                </span>
+                <span class="input">
+                    <label for="up_password">Create Password</label>
+                    <input type="password" name="" id="up_password" required>
+                </span>
+                <span class="input">
+                    <label for="up_phone">Phone #</label>
+                    <input type="tel" name="" id="up_phone" required>
+                </span>
+                <span class="input">
+                    <label for="up_email">Email</label>
+                    <input type="email" name="" id="up_email" required>
+                </span>
+                <span>
+                    <button type="submit" id="up_btn">Sign Up</button>
+                </span>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
