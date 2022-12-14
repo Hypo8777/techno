@@ -210,21 +210,28 @@ setTimeout(() => {
 
 
 
+// $('#logout').click(() => {
+//     $.ajax({
+//         type: "POST",
+//         url: "php/controller/UserController.php?logout",
+//         success: function (response) {
+//             swal("Logout", response, {
+//                 icon: "warning",
+//                 closeOnEsc: true,
+//                 button: false
+//             });
+//             setTimeout(() => {
+//                 checkSession();
+//                 sessionStorage.clear();
+//                 window.location.reload();
+//             }, 200);
+//         }
+//     });
+// });
+
 $('#logout').click(() => {
-    $.ajax({
-        type: "POST",
-        url: "php/controller/UserController.php?logout",
-        success: function (response) {
-            swal("Logout", response, {
-                icon: "warning",
-                closeOnEsc: true,
-                button: false
-            });
-            setTimeout(() => {
-                checkSession();
-                sessionStorage.clear();
-                window.location.reload();
-            }, 200);
-        }
-    });
+    sessionStorage.clear();
+    checkSession();
+    sessionStorage.clear();
+    window.location.reload();
 });
